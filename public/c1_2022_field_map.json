@@ -1,0 +1,2288 @@
+{
+  "form_metadata": {
+    "form_name": "C1(2022) Confirmation Inventory",
+    "form_version": "2022",
+    "issuer": "HM Revenue & Customs",
+    "purpose": "Application for Confirmation in Scotland for deaths on or after 1 January 2022",
+    "total_pages": 5,
+    "total_fields": 266,
+    "pdf_filename": "C1-2022.pdf",
+    "guidance_document": "C3(2006)(2022) - Notes to help you fill in form C1(2022)",
+    "related_forms": [
+      "C5(2006)(2022) - for excepted estates",
+      "C2 - continuation sheets for inventory",
+      "IHT400 - formal inheritance tax account",
+      "C4(S)(2022) - corrective inventory"
+    ],
+    "notes": "Pages 1-3 plus continuation sheets are public record. Pages 4-5 are NOT public.",
+    "parent_container_fields": {
+      "note": "These 4 fields are parent containers for the inventory table lines. They are NOT fillable themselves.",
+      "fields": [
+        "C1_AMT01",
+        "C1_Desc01",
+        "C1_Item01",
+        "C1_PR01"
+      ]
+    },
+    "fillable_field_count": 262,
+    "total_pdf_fields_including_containers": 266
+  },
+  "wizard_field_suggestions": {
+    "applicant_name_line_1": "C1_01_01",
+    "applicant_name_line_2": "C1_01_02",
+    "applicant_name_line_3": "C1_01_03",
+    "applicant_name_line_4": "C1_01_04",
+    "applicant_name_line_5": "C1_01_05",
+    "applicant_reference": "C1_02",
+    "hmrc_reference": "C1_03",
+    "deceased_title": "C1_04",
+    "deceased_first_names": [
+      "C1_05_01",
+      "C1_05_02"
+    ],
+    "deceased_surname": "C1_06",
+    "deceased_address": [
+      "C1_07_01",
+      "C1_07_02",
+      "C1_07_03",
+      "C1_07_04"
+    ],
+    "deceased_postcode": "C1_07_05",
+    "deceased_occupation": "C1_08",
+    "deceased_date_of_birth": [
+      "C1_09_01",
+      "C1_09_02",
+      "C1_09_03",
+      "C1_09_04",
+      "C1_09_05",
+      "C1_09_06",
+      "C1_09_07",
+      "C1_09_08"
+    ],
+    "deceased_date_of_death": [
+      "C1_10_01",
+      "C1_10_02",
+      "C1_10_03",
+      "C1_10_04",
+      "C1_10_05",
+      "C1_10_06",
+      "C1_10_07",
+      "C1_10_08"
+    ],
+    "deceased_place_of_death": "C1_11",
+    "total_estate_for_confirmation": "C1_12",
+    "executor_1_name_address": [
+      "C1_13_01",
+      "C1_13_02",
+      "C1_13_03",
+      "C1_13_04"
+    ],
+    "executor_1_postcode": "C1_13_05",
+    "executor_2_name_address": [
+      "C1_14_01",
+      "C1_14_02",
+      "C1_14_03",
+      "C1_14_04"
+    ],
+    "executor_2_postcode": "C1_14_05",
+    "executor_3_name_address": [
+      "C1_15_01",
+      "C1_15_02",
+      "C1_15_03",
+      "C1_15_04"
+    ],
+    "executor_3_postcode": "C1_15_05",
+    "executor_4_name_address": [
+      "C1_16_01",
+      "C1_16_02",
+      "C1_16_03",
+      "C1_16_04"
+    ],
+    "executor_4_postcode": "C1_16_05",
+    "declaration_by_executor": "C1_17",
+    "deceased_full_name_declaration": "C1_18",
+    "deceased_domicile": "C1_19",
+    "executor_status_and_appointment": "C1_20",
+    "other_executors_part_1": "C1_21",
+    "other_executors_verb": "C1_21a",
+    "other_executors_gender": "C1_21b",
+    "other_executors_names": "C1_21c",
+    "inventory_last_page_number": "C1_22",
+    "confirmation_value_total": "C1_23",
+    "declaration_date": [
+      "C1_24_01",
+      "C1_24_02",
+      "C1_24_03",
+      "C1_24_04",
+      "C1_24_05",
+      "C1_24_06",
+      "C1_24_07",
+      "C1_24_08"
+    ],
+    "gross_value_of_estate": "C1_25",
+    "less_funeral_expenses": "C1_26",
+    "less_mortgage_or_security": "C1_27",
+    "less_other_debts": "C1_28",
+    "net_value_of_estate": "C1_29",
+    "iht400_completed": "C1_30",
+    "marital_status": "C1_31",
+    "surviving_spouse": "C1_32a",
+    "surviving_parent": "C1_32b",
+    "surviving_siblings": "C1_32c",
+    "number_of_children": [
+      "C1_33_01",
+      "C1_33_02"
+    ],
+    "number_of_grandchildren": [
+      "C1_34_01",
+      "C1_34_02",
+      "C1_34_03"
+    ],
+    "utr_unique_taxpayer_reference": [
+      "C1_35_01",
+      "C1_35_02",
+      "C1_35_03",
+      "C1_35_04",
+      "C1_35_05",
+      "C1_35_06",
+      "C1_35_07",
+      "C1_35_08",
+      "C1_35_09",
+      "C1_35_10"
+    ],
+    "ni_number_national_insurance": [
+      "C1_36_01",
+      "C1_36_02",
+      "C1_36_03",
+      "C1_36_04",
+      "C1_36_05",
+      "C1_36_06",
+      "C1_36_07",
+      "C1_36_08",
+      "C1_36_09"
+    ],
+    "gross_value_for_inheritance_tax": "C1_37",
+    "net_value_for_inheritance_tax": "C1_38",
+    "net_qualifying_value": "C1_39",
+    "excepted_estate": "C1_40",
+    "transferable_nil_rate_band": "C1_41",
+    "total_tax_interest_payable": "C1_44",
+    "inventory_item_descriptions": "C1_Item01.Line01-37",
+    "inventory_item_amounts": [
+      "C1_AMT01.1",
+      "C1_AMT01.2",
+      "C1_AMT01.3",
+      "C1_AMT01.4",
+      "C1_AMT01.5",
+      "C1_AMT01.6",
+      "C1_AMT01.7",
+      "C1_AMT01.8",
+      "C1_AMT01.9",
+      "C1_AMT01.10",
+      "C1_AMT01.11",
+      "C1_AMT01.12",
+      "C1_AMT01.13",
+      "C1_AMT01.14",
+      "C1_AMT01.15",
+      "C1_AMT01.16",
+      "C1_AMT01.17",
+      "C1_AMT01.18",
+      "C1_AMT01.19",
+      "C1_AMT01.20",
+      "C1_AMT01.21",
+      "C1_AMT01.22",
+      "C1_AMT01.23",
+      "C1_AMT01.24",
+      "C1_AMT01.25",
+      "C1_AMT01.26",
+      "C1_AMT01.27",
+      "C1_AMT01.28",
+      "C1_AMT01.29",
+      "C1_AMT01.30",
+      "C1_AMT01.31",
+      "C1_AMT01.32",
+      "C1_AMT01.33",
+      "C1_AMT01.34",
+      "C1_AMT01.35",
+      "C1_AMT01.36",
+      "C1_AMT01.37"
+    ],
+    "inventory_total": "C1_AMT01_Total"
+  },
+  "common_pitfalls": [
+    {
+      "issue": "Missing inventory headings",
+      "description": "Forms are rejected when country section headings are omitted, even if value is NIL. MUST include: Estate in Scotland (heritable first), Estate in England and Wales, Estate in Northern Ireland, Summary for confirmation, Estate elsewhere (specify country). Write 'NIL' explicitly if no assets in that category.",
+      "impact": "critical",
+      "fix": "Include all 5 section headings with explicit description and NIL values where appropriate"
+    },
+    {
+      "issue": "Insufficient conveyancing description for property",
+      "description": "A simple address like '4 Main Street, Edinburgh' is rejected. Property must include full conveyancing description from title deed: 'being the subjects described in the disposition by [SELLER NAMES] in favour of [BUYER NAMES] recorded in the General Register of Sasines for the Sheriffdom of [NAME] on [DATE]' or similar from Land Register of Scotland.",
+      "impact": "critical",
+      "fix": "Check title deeds/disposition. Include grantor, grantee, GRS/LRS reference and date. Contact solicitor if unsure."
+    },
+    {
+      "issue": "Incorrect country determination for financial accounts",
+      "description": "Bank/building society country is determined by the REGISTERED OFFICE of the institution, not the branch where the account is held. Example: Nationwide Building Society accounts are in England and Wales (HQ in Swindon) even if the customer visited a Scottish branch.",
+      "impact": "critical",
+      "fix": "Check institution's main headquarters location. If uncertain, ask the bank/building society for confirmation of domicile."
+    },
+    {
+      "issue": "Declaration section (Box 2, Page 2) too brief or non-compliant",
+      "description": "Edinburgh court particularly pedantic about declaration wording. Vague statements like 'I am the executor' or 'I confirm I am the executor of this will' are rejected. Must: (1) Confirm you are Executor Nominate/Dative, (2) Reference specific will date, (3) Name all co-executors and their status, (4) State if any executors have died or declined, (5) Confirm will is produced with you as executor. Example: '[NAME], daughter and executrix nominate of the late [DECEASED NAME] conform to the will of the deceased who resided at [ADDRESS], dated [DATE OF WILL] which is produced herewith, docquetted and signed by me as relative hereto.'",
+      "impact": "critical",
+      "fix": "Use formal language. Reference exact will date. Include all executor names and their exact relationship/status. State 'conform to will dated [DATE]' or 'as Executor Dative appointed by Sheriff Court of [SHERIFFDOM]'."
+    },
+    {
+      "issue": "Declaration date mismatch with will docquet",
+      "description": "The date you enter in the declaration (Box 8, Page 2 - C1_24) MUST match the date written on the docquet on the will itself. If form is rejected and resubmitted, keep the ORIGINAL date from the first submission.",
+      "impact": "critical",
+      "fix": "Check docquet date on will carefully. If resubmitting, preserve original declaration date from first submission."
+    },
+    {
+      "issue": "Using insurance value instead of open market value for household contents",
+      "description": "Household goods must be valued at open market/second-hand/auction value, NOT insurance replacement value. Insurance values are typically 2-3x higher and will cause the form to be rejected.",
+      "impact": "high",
+      "fix": "Use second-hand market value or obtain a valuer's estimate of what items would fetch at auction. A professional valuer may be required for valuable items."
+    },
+    {
+      "issue": "Including professional fees in 'other debts'",
+      "description": "Box 14 (Other debts) should NOT include solicitor fees, accountant fees, valuer fees, or similar professional costs incurred AFTER death. These are estate administration costs and must be paid from the estate but are not deducted here.",
+      "impact": "high",
+      "fix": "Only include debts actually owed by deceased at time of death (unpaid bills, mortgages, credit card balances, cheques, etc). Do not include post-death professional fees."
+    },
+    {
+      "issue": "Including foreign debts on C1 form",
+      "description": "Debts relating to foreign assets should NOT be entered on C1. They are dealt with through separate procedures and different forms.",
+      "impact": "high",
+      "fix": "Exclude all foreign debts from Box 13-14. Handle foreign assets separately if applicable."
+    },
+    {
+      "issue": "Unclear surviving relatives information",
+      "description": "Box 18 checkboxes and Box 19 numbers for children/grandchildren must be completed accurately. If you tick 'Brothers or sisters' in Box 18, you must explain in full detail who survives in the declaration or supporting statement.",
+      "impact": "medium",
+      "fix": "Tick only those categories that apply. If ticking unusual options (siblings but no spouse), provide clear supporting information in declaration."
+    },
+    {
+      "issue": "National Savings and Premium Bonds categorized incorrectly",
+      "description": "National Savings & Premium Bonds are moveable estate in Scotland, NOT English property, even though NS&I is based in England.",
+      "impact": "medium",
+      "fix": "List NS&I products under 'Estate in Scotland' section, not 'Estate in England and Wales'."
+    },
+    {
+      "issue": "Incomplete domicile description for non-Scottish deaths",
+      "description": "If deceased died domiciled outside Scotland, the domicile statement must specify the exact country AND state/province. 'Died in England' is insufficient. Must be 'Died domiciled in England (specify county)' or for US 'Died domiciled in United States of America, State of [STATE]'.",
+      "impact": "medium",
+      "fix": "For Scottish domicile: name the Sheriffdom and add '...in Scotland'. For outside Scotland: name country and state/province explicitly."
+    },
+    {
+      "issue": "Continuation sheet numbering incorrect",
+      "description": "If using continuation sheets (form C2), they must be numbered in the declaration and inventory as C2/1, C2/2, C2/3 etc. Simply writing 'see continuation' or 'page 4' is rejected.",
+      "impact": "medium",
+      "fix": "Number all continuation sheets explicitly as C2/1, C2/2. State in Box 7 (declaration page number) the correct final page number including all continuation sheets."
+    },
+    {
+      "issue": "Executor details incomplete or unclear",
+      "description": "Box 10 must show each executor's FULL name and address. Abbreviations, initials only, or missing postcodes cause rejection. If executors have different addresses, list all clearly.",
+      "impact": "medium",
+      "fix": "Write out full forenames. Include street, town, county, postcode for each executor. If executor is deceased or has declined, state this clearly in declaration (Box 2)."
+    },
+    {
+      "issue": "Bank account country determined by branch location",
+      "description": "Many people mistakenly list all their bank accounts under 'Estate in Scotland' because they used a Scottish branch. WRONG. Account country is determined by the REGISTERED OFFICE/HEAD OFFICE of the bank.",
+      "impact": "high",
+      "fix": "Check where each bank is registered/headquartered. Example: HSBC (registered in England) = England and Wales, even if accessed via Scottish branch."
+    },
+    {
+      "issue": "IHT400 status misalignment",
+      "description": "Box 16 asks if IHT400 has been completed. If YES, skip Boxes 17-20. If NO, must complete Boxes 17-20. Many people complete both, causing confusion.",
+      "impact": "medium",
+      "fix": "If IHT400 is being filed at same time, mark Box 16 'Yes' and leave Boxes 17-20 blank. If no IHT400, mark 'No' and complete all Boxes 17-20."
+    },
+    {
+      "issue": "Excepted estate limit misunderstood",
+      "description": "Excepted estate threshold is \u00a3325,000 (2009-2026) for single person or \u00a3650,000 if claiming transferable nil rate band from pre-deceased spouse. Many people claim excepted incorrectly because they misunderstand the threshold.",
+      "impact": "medium",
+      "fix": "Box 21: Check if gross value for IHT (Box 23) is within \u00a3325,000 (or \u00a3650,000 with NRB transfer). If within limit AND meets other excepted estate conditions, mark 'Yes'. Otherwise 'No'."
+    },
+    {
+      "issue": "Each inventory line becomes a specific Confirmation certificate",
+      "description": "Every item listed in the inventory will appear on the Confirmation certificate issued by the court. Vague descriptions like 'Bank Account' without account number means executors cannot apply for funds - bank will not know which account is meant if customer had multiple accounts.",
+      "impact": "high",
+      "fix": "Include account numbers, ISA provider names, share certificate details, property addresses as they appear in deeds. Use recognizable descriptions that financial institutions can match to records."
+    },
+    {
+      "issue": "Heritable property share calculation error",
+      "description": "If property was held jointly or in partnership, many people incorrectly list the full value instead of only the deceased's fractional share.",
+      "impact": "high",
+      "fix": "Determine the deceased's actual share. If jointly owned 50/50, list 50% of value. If held by surviving spouse, may not be estate at all (passes by survivorship - not on C1)."
+    }
+  ],
+  "conditional_logic": [
+    {
+      "rule_id": "RULE_IHT400_SKIP",
+      "description": "If IHT400 has been filled in (Box 16 = Yes), skip questions 17-20 (Boxes 17-20)",
+      "condition": "C1_30 === '/Yes'",
+      "action": "skip_to_box_26",
+      "affected_fields": [
+        "C1_31",
+        "C1_32a",
+        "C1_32b",
+        "C1_32c",
+        "C1_33_01",
+        "C1_33_02",
+        "C1_34_01",
+        "C1_34_02",
+        "C1_34_03",
+        "C1_35_01",
+        "C1_35_02",
+        "C1_35_03",
+        "C1_35_04",
+        "C1_35_05",
+        "C1_35_06",
+        "C1_35_07",
+        "C1_35_08",
+        "C1_35_09",
+        "C1_35_10",
+        "C1_36_01",
+        "C1_36_02",
+        "C1_36_03",
+        "C1_36_04",
+        "C1_36_05",
+        "C1_36_06",
+        "C1_36_07",
+        "C1_36_08",
+        "C1_36_09"
+      ],
+      "notes": "When IHT400 is completed, inheritance tax-related questions are unnecessary on C1 form."
+    },
+    {
+      "rule_id": "RULE_EXCEPTED_YES",
+      "description": "If estate is excepted (Box 21 = Yes), application may be complete after Box 25",
+      "condition": "C1_40 === '/Yes'",
+      "action": "may_complete_section_D",
+      "notes": "Check if estate qualifies as excepted. Threshold is \u00a3325,000 gross (2009-2026), or \u00a3650,000 if claiming transferable nil rate band. See guidance page 15."
+    },
+    {
+      "rule_id": "RULE_TRANSFERABLE_NRB",
+      "description": "If claiming transfer of unused nil rate band (Box 22 = Yes), complete section E and Box 25",
+      "condition": "C1_41 === '/Yes'",
+      "action": "complete_section_E",
+      "notes": "Available for deaths on or after 6 April 2010. Pre-deceased spouse/civil partner must have died after 13 November 1974. Requires evidence of estate value at spouse's death."
+    },
+    {
+      "rule_id": "RULE_NET_VALUE_CALC",
+      "description": "Box 15 (Net value) = Box 11 - Box 12 - Box 13 - Box 14",
+      "condition": "always",
+      "action": "calculate",
+      "formula": "C1_29 = C1_25 - C1_26 - C1_27 - C1_28",
+      "notes": "C1_29 should be calculated/read-only in the PDF. Manual entry not recommended."
+    },
+    {
+      "rule_id": "RULE_INVENTORY_TOTAL",
+      "description": "Inventory amount column auto-sums all line items",
+      "condition": "always",
+      "action": "calculate",
+      "formula": "C1_AMT01_Total = SUM(C1_AMT01.1 through C1_AMT01.37)",
+      "notes": "Total should auto-populate from inventory amounts. If manual entry required, sum all 37 lines."
+    },
+    {
+      "rule_id": "RULE_TOTAL_ESTATE_MATCH",
+      "description": "Box 9 (Total estate for confirmation) should equal Inventory total",
+      "condition": "always",
+      "action": "validate",
+      "formula": "C1_12 === C1_AMT01_Total",
+      "notes": "This is a critical validation. Mismatch will cause rejection."
+    },
+    {
+      "rule_id": "RULE_GROSS_VALUE_MATCH",
+      "description": "Box 11 (Gross value) should equal Box 9 (Total estate for confirmation)",
+      "condition": "always",
+      "action": "validate",
+      "formula": "C1_25 === C1_12",
+      "notes": "Box 11 is the total for Confirmation. If mortgage was deducted from heritable property in inventory, add it back in Box 11."
+    },
+    {
+      "rule_id": "RULE_CONFIRMATION_VALUE_MATCH",
+      "description": "Para 6 value (Box 6 on page 2) should equal Box 9 and inventory total",
+      "condition": "always",
+      "action": "validate",
+      "formula": "C1_23 === C1_12",
+      "notes": "Value stated in declaration must match inventory total for Confirmation."
+    },
+    {
+      "rule_id": "RULE_INVENTORY_HEADINGS_REQUIRED",
+      "description": "Inventory must include all country section headings even if NIL",
+      "condition": "always",
+      "action": "validate",
+      "notes": "CRITICAL: Must include in this order: 1) Estate in Scotland (heritable property first), 2) Estate in England and Wales, 3) Estate in Northern Ireland, 4) Summary for confirmation, 5) Estate elsewhere (specify which country). Enter 'NIL' explicitly if no assets in a category. Forms are rejected if any heading is omitted."
+    },
+    {
+      "rule_id": "RULE_EXCEPTED_ESTATE_LIMIT",
+      "description": "Excepted estate if gross value for IHT does not exceed \u00a3325,000 (2009-2026) or \u00a3650,000 with NRB transfer",
+      "condition": "C1_37 <= 325000 OR (C1_37 <= 650000 AND C1_41 === '/Yes')",
+      "action": "qualifies_as_excepted",
+      "notes": "See Box 21 and Box 25. Check excepted estates guidance before answering."
+    },
+    {
+      "rule_id": "RULE_SURVIVING_RELATIVES_CONSISTENCY",
+      "description": "Box 18 checkboxes must be consistent with Box 19 numbers and declaration statement",
+      "condition": "always",
+      "action": "validate",
+      "notes": "If you tick children checkbox but enter 0 in Box 19, this is inconsistent and will be queried. Ensure checkbox selections match the numbers entered."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "SECTION_HEADER",
+      "section_name": "Header - Applicant Details (Page 1, Top)",
+      "page": 1,
+      "description": "Name, address and reference of person to whom form should be returned. This is the applicant/executor, NOT the deceased.",
+      "fields": [
+        {
+          "field_id": "C1_01_01",
+          "field_name": "Applicant name and address line 1",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "Enter the name and address of the executor/applicant to whom correspondence should be sent."
+        },
+        {
+          "field_id": "C1_01_02",
+          "field_name": "Applicant name and address line 2",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_01_03",
+          "field_name": "Applicant name and address line 3",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_01_04",
+          "field_name": "Applicant name and address line 4",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_01_05",
+          "field_name": "Applicant name and address line 5",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_02",
+          "field_name": "Your reference",
+          "field_type": "text",
+          "max_length": 20,
+          "guidance": "Applicant's own reference number if desired (optional)."
+        },
+        {
+          "field_id": "C1_03",
+          "field_name": "HM Revenue and Customs reference",
+          "field_type": "text",
+          "max_length": 20,
+          "guidance": "Leave blank unless you have been given a reference from previous IHT400 correspondence."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_1",
+      "section_name": "Box 1 - Deceased's Title",
+      "page": 1,
+      "description": "Title of the deceased person",
+      "fields": [
+        {
+          "field_id": "C1_04",
+          "field_name": "Title",
+          "field_type": "text",
+          "max_length": 10,
+          "guidance": "Enter Mr, Mrs, Miss, Ms, Dr, Rev, or other appropriate title. Examples: Mr., Mrs., Dr., Rev., Prof."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_2",
+      "section_name": "Box 2 - Deceased's First Names",
+      "page": 1,
+      "description": "First names of the deceased",
+      "fields": [
+        {
+          "field_id": "C1_05_01",
+          "field_name": "First names line 1",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "Enter only the first 2 forenames. Any additional forenames should be entered at Box 1 on page 2."
+        },
+        {
+          "field_id": "C1_05_02",
+          "field_name": "First names line 2",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "Continuation of first names if needed."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_3",
+      "section_name": "Box 3 - Deceased's Surname",
+      "page": 1,
+      "description": "Family name of the deceased",
+      "fields": [
+        {
+          "field_id": "C1_06",
+          "field_name": "Surname",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "If deceased was known by another name, show it here. Example: 'John Smith otherwise known as Jack Smith'."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_4",
+      "section_name": "Box 4 - Deceased's Address",
+      "page": 1,
+      "description": "Last known address of the deceased",
+      "fields": [
+        {
+          "field_id": "C1_07_01",
+          "field_name": "Address line 1",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "Last known address. Format: street address, town, county/region."
+        },
+        {
+          "field_id": "C1_07_02",
+          "field_name": "Address line 2",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_07_03",
+          "field_name": "Address line 3",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_07_04",
+          "field_name": "Address line 4",
+          "field_type": "text",
+          "max_length": 40
+        },
+        {
+          "field_id": "C1_07_05",
+          "field_name": "Postcode",
+          "field_type": "text",
+          "max_length": 10,
+          "guidance": "Include postcode in the space provided."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_5",
+      "section_name": "Box 5 - Deceased's Occupation",
+      "page": 1,
+      "description": "Occupation of the deceased at time of death",
+      "fields": [
+        {
+          "field_id": "C1_08",
+          "field_name": "Occupation",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "State occupation and whether retired. If retired, give previous occupation: 'Engineer (retired)'. If no occupation, enter 'none'."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_6",
+      "section_name": "Box 6 - Deceased's Date of Birth",
+      "page": 1,
+      "description": "Date of birth in DD MM YYYY format",
+      "fields": [
+        {
+          "field_id": "C1_09_01",
+          "field_name": "Date of birth - day digit 1",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "8th March 1949 becomes 08/03/1949"
+        },
+        {
+          "field_id": "C1_09_02",
+          "field_name": "Date of birth - day digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_03",
+          "field_name": "Date of birth - month digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_04",
+          "field_name": "Date of birth - month digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_05",
+          "field_name": "Date of birth - year digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_06",
+          "field_name": "Date of birth - year digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_07",
+          "field_name": "Date of birth - year digit 3",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_09_08",
+          "field_name": "Date of birth - year digit 4",
+          "field_type": "text",
+          "max_length": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_7",
+      "section_name": "Box 7 - Deceased's Date of Death",
+      "page": 1,
+      "description": "Date of death in DD MM YYYY format",
+      "fields": [
+        {
+          "field_id": "C1_10_01",
+          "field_name": "Date of death - day digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_02",
+          "field_name": "Date of death - day digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_03",
+          "field_name": "Date of death - month digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_04",
+          "field_name": "Date of death - month digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_05",
+          "field_name": "Date of death - year digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_06",
+          "field_name": "Date of death - year digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_07",
+          "field_name": "Date of death - year digit 3",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_10_08",
+          "field_name": "Date of death - year digit 4",
+          "field_type": "text",
+          "max_length": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_8",
+      "section_name": "Box 8 - Place of Death",
+      "page": 1,
+      "description": "Where the deceased died",
+      "fields": [
+        {
+          "field_id": "C1_11",
+          "field_name": "Place of death",
+          "field_type": "text",
+          "max_length": 40,
+          "guidance": "City/town or location where death occurred."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_9",
+      "section_name": "Box 9 - Total Estate for Confirmation",
+      "page": 1,
+      "description": "Total value of estate requiring Confirmation",
+      "fields": [
+        {
+          "field_id": "C1_12",
+          "field_name": "Total estate for Confirmation",
+          "field_type": "currency",
+          "guidance": "Gross value of estate for which Confirmation is required. This should equal the inventory total. Do not include 'estate elsewhere' (foreign assets)."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_10",
+      "section_name": "Box 10 - Executors' Details",
+      "page": 1,
+      "description": "Full name and address of each executor (up to 4)",
+      "subsections": [
+        {
+          "executor_number": 1,
+          "fields": [
+            {
+              "field_id": "C1_13_01",
+              "field_name": "Executor 1 - name and address line 1",
+              "field_type": "text",
+              "max_length": 40,
+              "guidance": "Full name and address of first executor."
+            },
+            {
+              "field_id": "C1_13_02",
+              "field_name": "Executor 1 - name and address line 2",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_13_03",
+              "field_name": "Executor 1 - name and address line 3",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_13_04",
+              "field_name": "Executor 1 - name and address line 4",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_13_05",
+              "field_name": "Executor 1 - postcode",
+              "field_type": "text",
+              "max_length": 10
+            }
+          ]
+        },
+        {
+          "executor_number": 2,
+          "fields": [
+            {
+              "field_id": "C1_14_01",
+              "field_name": "Executor 2 - name and address line 1",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_14_02",
+              "field_name": "Executor 2 - name and address line 2",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_14_03",
+              "field_name": "Executor 2 - name and address line 3",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_14_04",
+              "field_name": "Executor 2 - name and address line 4",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_14_05",
+              "field_name": "Executor 2 - postcode",
+              "field_type": "text",
+              "max_length": 10
+            }
+          ]
+        },
+        {
+          "executor_number": 3,
+          "fields": [
+            {
+              "field_id": "C1_15_01",
+              "field_name": "Executor 3 - name and address line 1",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_15_02",
+              "field_name": "Executor 3 - name and address line 2",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_15_03",
+              "field_name": "Executor 3 - name and address line 3",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_15_04",
+              "field_name": "Executor 3 - name and address line 4",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_15_05",
+              "field_name": "Executor 3 - postcode",
+              "field_type": "text",
+              "max_length": 10
+            }
+          ]
+        },
+        {
+          "executor_number": 4,
+          "fields": [
+            {
+              "field_id": "C1_16_01",
+              "field_name": "Executor 4 - name and address line 1",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_16_02",
+              "field_name": "Executor 4 - name and address line 2",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_16_03",
+              "field_name": "Executor 4 - name and address line 3",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_16_04",
+              "field_name": "Executor 4 - name and address line 4",
+              "field_type": "text",
+              "max_length": 40
+            },
+            {
+              "field_id": "C1_16_05",
+              "field_name": "Executor 4 - postcode",
+              "field_type": "text",
+              "max_length": 10
+            }
+          ]
+        }
+      ],
+      "guidance": "'Nominate' means appointed by the will. If no will or no person named to act as executor, Executors will be Executors Dative as appointed by the Sheriff Court. If nominate, list in the order shown in the will."
+    },
+    {
+      "section_id": "SECTION_DECLARATION",
+      "section_name": "Declaration (Page 2)",
+      "page": 2,
+      "description": "Formal declaration by the executor making the application",
+      "fields": [
+        {
+          "field_id": "C1_17",
+          "field_name": "Declaration by - executor details",
+          "field_type": "multiline_text",
+          "guidance": "Full name and address of the executor making the declaration. This must be the executor who signs the form at the foot of page 2."
+        },
+        {
+          "field_id": "C1_18",
+          "field_name": "Who declares that the deceased (full name)",
+          "field_type": "text",
+          "max_length": 80,
+          "guidance": "Show the full name of the deceased, including any forenames omitted on page 1. The name should correspond to the name used in the will."
+        },
+        {
+          "field_id": "C1_19",
+          "field_name": "Domiciled in",
+          "field_type": "text",
+          "max_length": 80,
+          "guidance": "If domiciled in Scotland: give the Sheriffdom name and add '...in Scotland'. If outside Scotland: give the exact country, state or province. Example Scottish: 'Sheriffdom of Lothian and Borders in Scotland'. Example non-Scottish: 'Domiciled in England, County of Surrey' or 'Domiciled in United States of America, State of California'."
+        },
+        {
+          "field_id": "C1_20",
+          "field_name": "That I am - executor status and appointment",
+          "field_type": "multiline_text",
+          "guidance": "CRITICAL FIELD - Most common rejection reason. Must include: (1) Full title of the executor (e.g., daughter and executrix nominate), (2) Details of appointing documents (will date, any codicils), (3) Clear statement of executor status (Nominate/Dative), (4) Names and status of other executors if any, (5) Statement of any executors who have died or declined. EXAMPLE: '[NAME], daughter and executrix nominate of the late [DECEASED NAME] conform to the will of the deceased who resided at [ADDRESS], dated [DATE OF WILL] which is produced herewith, docquetted and signed by me as relative hereto.'"
+        },
+        {
+          "field_id": "C1_21",
+          "field_name": "Other executors - part 1",
+          "field_type": "text",
+          "max_length": 10,
+          "guidance": "Start of 'That I' for paragraph 3 about other executors."
+        },
+        {
+          "field_id": "C1_21a",
+          "field_name": "Other executors - verb (am/are)",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/ am",
+              "label": "am"
+            },
+            {
+              "value": "/ are",
+              "label": "are"
+            }
+          ],
+          "default": "/ am",
+          "guidance": "Select 'am' if single executor, 'are' if multiple executors."
+        },
+        {
+          "field_id": "C1_21b",
+          "field_name": "Other executors - gender (Executor/Executrix)",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/ Executor",
+              "label": "Executor"
+            },
+            {
+              "value": "/ Executrix",
+              "label": "Executrix"
+            }
+          ],
+          "default": "/ Executor",
+          "guidance": "Select Executor for male/mixed group, Executrix for female executor."
+        },
+        {
+          "field_id": "C1_21c",
+          "field_name": "Other executors - along with names",
+          "field_type": "multiline_text",
+          "guidance": "Full names of any co-executors. Leave blank if none. Example: 'along with Robert Smith (son) and Elizabeth Brown (daughter), both Executors Nominate conform to the said will'."
+        },
+        {
+          "field_id": "C1_22",
+          "field_name": "Inventory carried to page",
+          "field_type": "text",
+          "max_length": 3,
+          "guidance": "Enter the number of the last page of the Inventory. If using continuation sheets (C2), number them as C2/1, C2/2, C2/3. No part of this paragraph should be deleted."
+        },
+        {
+          "field_id": "C1_23",
+          "field_name": "Amounting in value to",
+          "field_type": "currency",
+          "guidance": "Gross value for Confirmation. This is the total value of UK assets listed in the Inventory. Should match Box 9 on page 1 (C1_12)."
+        },
+        {
+          "field_id": "C1_24_01",
+          "field_name": "Declaration date - day digit 1",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "CRITICAL: This date must match the date written on the docquet on the will itself. If form is rejected and resubmitted, preserve the original date."
+        },
+        {
+          "field_id": "C1_24_02",
+          "field_name": "Declaration date - day digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_03",
+          "field_name": "Declaration date - month digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_04",
+          "field_name": "Declaration date - month digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_05",
+          "field_name": "Declaration date - year digit 1",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_06",
+          "field_name": "Declaration date - year digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_07",
+          "field_name": "Declaration date - year digit 3",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_24_08",
+          "field_name": "Declaration date - year digit 4",
+          "field_type": "text",
+          "max_length": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_INVENTORY",
+      "section_name": "Inventory (Page 3)",
+      "page": 3,
+      "description": "Detailed list of all estate assets with values. Must include country section headings.",
+      "critical_note": "MUST include all 5 country section headings even if value is NIL: 1) Estate in Scotland (heritable property first), 2) Estate in England and Wales, 3) Estate in Northern Ireland, 4) Summary for confirmation, 5) Estate elsewhere (specify country). Forms are rejected if any heading omitted.",
+      "inventory_table": {
+        "structure": "37-line inventory table with 4 columns",
+        "columns": [
+          {
+            "column_name": "Item Number",
+            "description": "Reference number for line item",
+            "fields": [
+              {
+                "field_id": "C1_Item01.Line01",
+                "line_number": 1,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line02",
+                "line_number": 2,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line03",
+                "line_number": 3,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line04",
+                "line_number": 4,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line05",
+                "line_number": 5,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line06",
+                "line_number": 6,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line07",
+                "line_number": 7,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line08",
+                "line_number": 8,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line09",
+                "line_number": 9,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line10",
+                "line_number": 10,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line11",
+                "line_number": 11,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line12",
+                "line_number": 12,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line13",
+                "line_number": 13,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line14",
+                "line_number": 14,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line15",
+                "line_number": 15,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line16",
+                "line_number": 16,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line17",
+                "line_number": 17,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line18",
+                "line_number": 18,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line19",
+                "line_number": 19,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line20",
+                "line_number": 20,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line21",
+                "line_number": 21,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line22",
+                "line_number": 22,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line23",
+                "line_number": 23,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line24",
+                "line_number": 24,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line25",
+                "line_number": 25,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line26",
+                "line_number": 26,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line27",
+                "line_number": 27,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line28",
+                "line_number": 28,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line29",
+                "line_number": 29,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line30",
+                "line_number": 30,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line31",
+                "line_number": 31,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line32",
+                "line_number": 32,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line33",
+                "line_number": 33,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line34",
+                "line_number": 34,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line35",
+                "line_number": 35,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line36",
+                "line_number": 36,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_Item01.Line37",
+                "line_number": 37,
+                "field_type": "text"
+              }
+            ]
+          },
+          {
+            "column_name": "Description of estate",
+            "description": "Detailed description of each asset",
+            "guidance": "For heritable property: include full conveyancing description from title deed (address + grantor/grantee + GRS/LRS reference + date). For bank accounts: include account number and state 'balance at date of death including interest'. For household contents: can use single line 'Household Goods and Personal Effects, value estimated by executor/executrix'. Use second-hand/auction value, not insurance value.",
+            "fields": [
+              {
+                "field_id": "C1_Desc01.Line01",
+                "line_number": 1,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line02",
+                "line_number": 2,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line03",
+                "line_number": 3,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line04",
+                "line_number": 4,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line05",
+                "line_number": 5,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line06",
+                "line_number": 6,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line07",
+                "line_number": 7,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line08",
+                "line_number": 8,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line09",
+                "line_number": 9,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line10",
+                "line_number": 10,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line11",
+                "line_number": 11,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line12",
+                "line_number": 12,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line13",
+                "line_number": 13,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line14",
+                "line_number": 14,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line15",
+                "line_number": 15,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line16",
+                "line_number": 16,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line17",
+                "line_number": 17,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line18",
+                "line_number": 18,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line19",
+                "line_number": 19,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line20",
+                "line_number": 20,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line21",
+                "line_number": 21,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line22",
+                "line_number": 22,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line23",
+                "line_number": 23,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line24",
+                "line_number": 24,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line25",
+                "line_number": 25,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line26",
+                "line_number": 26,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line27",
+                "line_number": 27,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line28",
+                "line_number": 28,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line29",
+                "line_number": 29,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line30",
+                "line_number": 30,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line31",
+                "line_number": 31,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line32",
+                "line_number": 32,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line33",
+                "line_number": 33,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line34",
+                "line_number": 34,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line35",
+                "line_number": 35,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line36",
+                "line_number": 36,
+                "field_type": "text",
+                "max_length": 60
+              },
+              {
+                "field_id": "C1_Desc01.Line37",
+                "line_number": 37,
+                "field_type": "text",
+                "max_length": 60
+              }
+            ]
+          },
+          {
+            "column_name": "Price of shares per share",
+            "description": "Share price information (if applicable)",
+            "fields": [
+              {
+                "field_id": "C1_PR01.Line01",
+                "line_number": 1,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line02",
+                "line_number": 2,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line03",
+                "line_number": 3,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line04",
+                "line_number": 4,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line05",
+                "line_number": 5,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line06",
+                "line_number": 6,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line07",
+                "line_number": 7,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line08",
+                "line_number": 8,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line09",
+                "line_number": 9,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line10",
+                "line_number": 10,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line11",
+                "line_number": 11,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line12",
+                "line_number": 12,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line13",
+                "line_number": 13,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line14",
+                "line_number": 14,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line15",
+                "line_number": 15,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line16",
+                "line_number": 16,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line17",
+                "line_number": 17,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line18",
+                "line_number": 18,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line19",
+                "line_number": 19,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line20",
+                "line_number": 20,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line21",
+                "line_number": 21,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line22",
+                "line_number": 22,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line23",
+                "line_number": 23,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line24",
+                "line_number": 24,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line25",
+                "line_number": 25,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line26",
+                "line_number": 26,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line27",
+                "line_number": 27,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line28",
+                "line_number": 28,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line29",
+                "line_number": 29,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line30",
+                "line_number": 30,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line31",
+                "line_number": 31,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line32",
+                "line_number": 32,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line33",
+                "line_number": 33,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line34",
+                "line_number": 34,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line35",
+                "line_number": 35,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line36",
+                "line_number": 36,
+                "field_type": "text"
+              },
+              {
+                "field_id": "C1_PR01.Line37",
+                "line_number": 37,
+                "field_type": "text"
+              }
+            ]
+          },
+          {
+            "column_name": "Amount \u00a3",
+            "description": "Value of asset in pounds sterling",
+            "fields": [
+              {
+                "field_id": "C1_AMT01.1",
+                "line_number": 1,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.2",
+                "line_number": 2,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.3",
+                "line_number": 3,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.4",
+                "line_number": 4,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.5",
+                "line_number": 5,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.6",
+                "line_number": 6,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.7",
+                "line_number": 7,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.8",
+                "line_number": 8,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.9",
+                "line_number": 9,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.10",
+                "line_number": 10,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.11",
+                "line_number": 11,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.12",
+                "line_number": 12,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.13",
+                "line_number": 13,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.14",
+                "line_number": 14,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.15",
+                "line_number": 15,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.16",
+                "line_number": 16,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.17",
+                "line_number": 17,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.18",
+                "line_number": 18,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.19",
+                "line_number": 19,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.20",
+                "line_number": 20,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.21",
+                "line_number": 21,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.22",
+                "line_number": 22,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.23",
+                "line_number": 23,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.24",
+                "line_number": 24,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.25",
+                "line_number": 25,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.26",
+                "line_number": 26,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.27",
+                "line_number": 27,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.28",
+                "line_number": 28,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.29",
+                "line_number": 29,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.30",
+                "line_number": 30,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.31",
+                "line_number": 31,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.32",
+                "line_number": 32,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.33",
+                "line_number": 33,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.34",
+                "line_number": 34,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.35",
+                "line_number": 35,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.36",
+                "line_number": 36,
+                "field_type": "currency"
+              },
+              {
+                "field_id": "C1_AMT01.37",
+                "line_number": 37,
+                "field_type": "currency"
+              }
+            ]
+          }
+        ],
+        "total_field": {
+          "field_id": "C1_AMT01_Total",
+          "field_name": "Carried forward total",
+          "field_type": "currency",
+          "calculated": true,
+          "formula": "SUM(C1_AMT01.1 through C1_AMT01.37)",
+          "guidance": "Auto-calculates total of all 37 inventory lines."
+        }
+      }
+    },
+    {
+      "section_id": "SECTION_BOX_11",
+      "section_name": "Box 11 - Gross Value of Estate",
+      "page": 4,
+      "description": "Total gross value for Confirmation purposes",
+      "fields": [
+        {
+          "field_id": "C1_25",
+          "field_name": "Gross value of estate",
+          "field_type": "currency",
+          "guidance": "This is the total for Confirmation. Do not include 'estate elsewhere' (foreign assets). If you deducted a mortgage from heritable property in the Inventory (Box 4 in inventory section), add the mortgage amount back here to get the gross value."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_12",
+      "section_name": "Box 12 - Less Funeral Expenses",
+      "page": 4,
+      "description": "Deduction for funeral costs and related expenses",
+      "fields": [
+        {
+          "field_id": "C1_26",
+          "field_name": "Less funeral expenses",
+          "field_type": "currency",
+          "guidance": "Total amounts deducted. May include reasonable mourning expenses of close family members and cost of headstone. Provide evidence of expenses if requested."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_13",
+      "section_name": "Box 13 - Less Mortgage/Standard Security",
+      "page": 4,
+      "description": "Deduction for outstanding mortgages or standard securities on heritable property",
+      "fields": [
+        {
+          "field_id": "C1_27",
+          "field_name": "Less standard security or mortgage",
+          "field_type": "currency",
+          "guidance": "Outstanding mortgage, standard security or other charges on property at date of death. If property was jointly owned, enter only the deceased's share of the mortgage."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_14",
+      "section_name": "Box 14 - Less Other Debts and Liabilities",
+      "page": 4,
+      "description": "Deduction for other debts owed by the deceased at death",
+      "fields": [
+        {
+          "field_id": "C1_28",
+          "field_name": "Less other debts and liabilities",
+          "field_type": "currency",
+          "guidance": "Debts actually owed at death: unpaid bills, uncleared cheques, credit card balances, personal loans, car finance, etc. DO NOT include professional fees for services after death (solicitors, accountants, valuers, etc.). DO NOT include foreign debts. Provide details of significant debts if requested."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_15",
+      "section_name": "Box 15 - Net Value of Estate",
+      "page": 4,
+      "description": "Calculated net value of estate for Confirmation",
+      "fields": [
+        {
+          "field_id": "C1_29",
+          "field_name": "Net value of estate",
+          "field_type": "currency",
+          "calculated": true,
+          "formula": "C1_25 - C1_26 - C1_27 - C1_28",
+          "guidance": "Calculated field: Gross value minus funeral expenses minus mortgages minus other debts. Should auto-calculate. Read-only in most PDF viewers."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_16",
+      "section_name": "Box 16 - IHT400 Status",
+      "page": 4,
+      "description": "Whether an IHT400 Inheritance Tax account has been completed",
+      "critical_note": "If answering YES to Box 16, skip Boxes 17-20 entirely.",
+      "fields": [
+        {
+          "field_id": "C1_30",
+          "field_name": "Have you filled in form IHT400 Inheritance Tax account?",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/Yes",
+              "label": "Yes"
+            },
+            {
+              "value": "/No",
+              "label": "No"
+            }
+          ],
+          "guidance": "If IHT400 is being completed separately or simultaneously, answer YES and skip Boxes 17-20. If no IHT400 is required or being filed, answer NO and complete Boxes 17-20."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_17",
+      "section_name": "Box 17 - Marital Status",
+      "page": 4,
+      "description": "Marital or civil partnership status of the deceased at death",
+      "conditional": "Only if Box 16 = No",
+      "fields": [
+        {
+          "field_id": "C1_31",
+          "field_name": "Tell us which of the following applied to the deceased at the time of death. Tick only one box.",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/ M",
+              "label": "Married or in a civil partnership"
+            },
+            {
+              "value": "/ S",
+              "label": "Single"
+            },
+            {
+              "value": "/ D",
+              "label": "Divorced or former civil partner"
+            },
+            {
+              "value": "/ W",
+              "label": "Widowed or surviving civil partner"
+            }
+          ],
+          "guidance": "Select the status at the time of death. Tick only one box."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_18",
+      "section_name": "Box 18 - Surviving Relatives",
+      "page": 4,
+      "description": "Checkboxes for categories of surviving relatives",
+      "conditional": "Only if Box 16 = No",
+      "fields": [
+        {
+          "field_id": "C1_32a",
+          "field_name": "Surviving spouse or civil partner",
+          "field_type": "checkbox",
+          "checked_value": "/ B",
+          "unchecked_value": "/Off",
+          "guidance": "Check if deceased left a surviving spouse or civil partner."
+        },
+        {
+          "field_id": "C1_32b",
+          "field_name": "Surviving parent",
+          "field_type": "checkbox",
+          "checked_value": "/ P",
+          "unchecked_value": "/Off",
+          "guidance": "Check if deceased left a surviving parent."
+        },
+        {
+          "field_id": "C1_32c",
+          "field_name": "Surviving brothers or sisters",
+          "field_type": "checkbox",
+          "checked_value": "/ B",
+          "unchecked_value": "/Off",
+          "guidance": "Check if deceased left surviving brothers or sisters. If ticking this without spouse/civil partner, provide clear detail in declaration."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_19",
+      "section_name": "Box 19 - Number of Surviving Children and Grandchildren",
+      "page": 4,
+      "description": "Numeric count of surviving children and grandchildren",
+      "conditional": "Only if Box 16 = No",
+      "fields": [
+        {
+          "field_id": "C1_33_01",
+          "field_name": "Number of surviving children - tens digit",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "Enter number of surviving children (0-99). Example: for 3 children, enter '0' in tens and '3' in units."
+        },
+        {
+          "field_id": "C1_33_02",
+          "field_name": "Number of surviving children - units digit",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_34_01",
+          "field_name": "Number of surviving grandchildren - hundreds digit",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "Enter number of surviving grandchildren (0-999). Example: for 12 grandchildren, enter '0' (hundreds), '1' (tens), '2' (units)."
+        },
+        {
+          "field_id": "C1_34_02",
+          "field_name": "Number of surviving grandchildren - tens digit",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_34_03",
+          "field_name": "Number of surviving grandchildren - units digit",
+          "field_type": "text",
+          "max_length": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_20",
+      "section_name": "Box 20 - UTR and National Insurance Number",
+      "page": 4,
+      "description": "Unique Taxpayer Reference (10 digits) and National Insurance number (9 characters)",
+      "conditional": "Only if Box 16 = No",
+      "fields": [
+        {
+          "field_id": "C1_35_01",
+          "field_name": "Unique Taxpayer Reference (UTR) - digit 1",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "10-digit UTR number from tax correspondence. If cannot find, enter 'not known'."
+        },
+        {
+          "field_id": "C1_35_02",
+          "field_name": "UTR digit 2",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_03",
+          "field_name": "UTR digit 3",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_04",
+          "field_name": "UTR digit 4",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_05",
+          "field_name": "UTR digit 5",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_06",
+          "field_name": "UTR digit 6",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_07",
+          "field_name": "UTR digit 7",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_08",
+          "field_name": "UTR digit 8",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_09",
+          "field_name": "UTR digit 9",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_35_10",
+          "field_name": "UTR digit 10",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_01",
+          "field_name": "National Insurance number - character 1 (letter)",
+          "field_type": "text",
+          "max_length": 1,
+          "guidance": "National Insurance number format: 2 letters, 6 digits, 1 letter (total 9 characters). Example: AB 123456 C becomes AB123456C. If cannot find, enter 'not known'."
+        },
+        {
+          "field_id": "C1_36_02",
+          "field_name": "NI character 2 (letter)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_03",
+          "field_name": "NI character 3 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_04",
+          "field_name": "NI character 4 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_05",
+          "field_name": "NI character 5 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_06",
+          "field_name": "NI character 6 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_07",
+          "field_name": "NI character 7 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_08",
+          "field_name": "NI character 8 (digit)",
+          "field_type": "text",
+          "max_length": 1
+        },
+        {
+          "field_id": "C1_36_09",
+          "field_name": "NI character 9 (letter)",
+          "field_type": "text",
+          "max_length": 1
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_21",
+      "section_name": "Box 21 - Excepted Estate Status",
+      "page": 5,
+      "description": "Whether the estate qualifies as an excepted estate for IHT purposes",
+      "fields": [
+        {
+          "field_id": "C1_40",
+          "field_name": "For Inheritance Tax, is the estate an excepted estate?",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/No",
+              "label": "No"
+            },
+            {
+              "value": "/Yes",
+              "label": "Yes"
+            }
+          ],
+          "guidance": "An excepted estate is one where the gross value for IHT does not exceed \u00a3325,000 (2009-2026), or \u00a3650,000 if claiming transferable nil rate band from pre-deceased spouse. Check the excepted estates guidance carefully. If 'Yes', Section D applies and application may be complete after Box 25."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_22",
+      "section_name": "Box 22 - Transferable Nil Rate Band Claim",
+      "page": 5,
+      "description": "Claim for transfer of unused nil rate band from pre-deceased spouse or civil partner",
+      "fields": [
+        {
+          "field_id": "C1_41",
+          "field_name": "I/we claim against this estate the unused proportion of the Inheritance Tax nil rate band of a pre-deceased spouse or civil partner of the deceased",
+          "field_type": "radio_group",
+          "options": [
+            {
+              "value": "/No",
+              "label": "No"
+            },
+            {
+              "value": "/Yes",
+              "label": "Yes"
+            }
+          ],
+          "guidance": "Available for deaths on or after 6 April 2010. The pre-deceased spouse/civil partner must have died after 13 November 1974. If 'Yes', Section E applies. You will need evidence of the pre-deceased spouse's estate value at death to calculate the unused portion."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_23",
+      "section_name": "Box 23 - Gross Value for Inheritance Tax",
+      "page": 5,
+      "description": "Gross value of the estate for IHT calculation purposes",
+      "fields": [
+        {
+          "field_id": "C1_37",
+          "field_name": "Gross value of estate for Inheritance Tax",
+          "field_type": "currency",
+          "guidance": "May differ from the Confirmation value (Box 9, page 1). Includes: property for Confirmation (with secured debts added back), joint property passing by survivorship, nominated property, settled property, gifts within 7 years of death, assets given away where interest was retained. Consult IHT guidance if unsure."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_24",
+      "section_name": "Box 24 - Net Value for Inheritance Tax",
+      "page": 5,
+      "description": "Net value of the estate for IHT after deduction of liabilities (but before exemptions/reliefs)",
+      "fields": [
+        {
+          "field_id": "C1_38",
+          "field_name": "Net value of estate for Inheritance Tax",
+          "field_type": "currency",
+          "guidance": "Value after deduction of liabilities (funeral expenses, debts, mortgages), but WITHOUT deduction of any exemptions and reliefs. Exemptions and reliefs are applied separately in the IHT calculation."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_25",
+      "section_name": "Box 25 - Net Qualifying Value",
+      "page": 5,
+      "description": "Net qualifying value of the estate after reliefs and exemptions",
+      "fields": [
+        {
+          "field_id": "C1_39",
+          "field_name": "Net qualifying value of estate",
+          "field_type": "currency",
+          "guidance": "Gross value less liabilities and any relief due from benefits passing to surviving spouse/civil partner or qualifying charity. This is the figure on which nil rate band and other reliefs are calculated. Read excepted estates guidance before filling in."
+        }
+      ]
+    },
+    {
+      "section_id": "SECTION_BOX_26",
+      "section_name": "Box 26 - Total Tax and Interest Being Paid",
+      "page": 5,
+      "description": "Amount of IHT and interest due at time of application",
+      "fields": [
+        {
+          "field_id": "C1_44",
+          "field_name": "Total tax and interest now being paid",
+          "field_type": "currency",
+          "guidance": "Copy the amount from: IHT400 box 119, OR IHT400 Calculation box 64, OR IHT430 box 28. If no tax is due, enter '0'. This field is critical for payment processing."
+        }
+      ]
+    }
+  ]
+}
