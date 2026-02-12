@@ -63,9 +63,37 @@ export async function generatePdf(caseData: Case): Promise<Uint8Array> {
   function setRadio(fieldId: string, value: string): void {
     try {
       const field = form.getRadioGroup(fieldId);
-      field.select(value);
-    } catch (e) {
-      console.warn(`Failed to set radio ${fieldId}:`, e);
+      // Try the provided value first
+      try {
+        field.select(value);
+        return;
+      } catch {
+        // Value didn't match — try reading available options and matching
+      }
+      const options = field.getOptions();
+      // Try case-insensitive match on the value (e.g. "/Yes" vs "/ Yes" vs "Yes")
+      const target = value.replace(/^\/\s*/, '').toLowerCase();
+      const match = options.find(
+        (opt) => opt.replace(/^\/\s*/, '').toLowerCase() === target
+      );
+      if (match) {
+        field.select(match);
+      } else {
+        console.warn(`Radio ${fieldId}: no matching option for "${value}". Available: ${JSON.stringify(options)}`);
+      }
+    } catch {
+      // Field might be a checkbox instead of a radio group
+      try {
+        const cb = form.getCheckBox(fieldId);
+        const isYes = value === RADIO_YES || value.replace(/^\/\s*/, '').toLowerCase() === 'yes';
+        if (isYes) {
+          cb.check();
+        } else {
+          cb.uncheck();
+        }
+      } catch (e) {
+        console.warn(`Failed to set radio/checkbox ${fieldId}:`, e);
+      }
     }
   }
 
@@ -125,6 +153,14 @@ export async function generatePdf(caseData: Case): Promise<Uint8Array> {
   applicantLines.forEach((line, i) => {
     if (line) setText(applicantFieldIds[i], line);
   });
+
+  // Your reference (C1_02) and HMRC reference (C1_03)
+  if (caseData.yourReference) {
+    setText(getFieldId(fieldMap, 'applicant_reference'), caseData.yourReference);
+  }
+  if (caseData.hmrcReference) {
+    setText(getFieldId(fieldMap, 'hmrc_reference'), caseData.hmrcReference);
+  }
 
   // Box 1: Title
   setText(getFieldId(fieldMap, 'deceased_title'), caseData.deceased.title);

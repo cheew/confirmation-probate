@@ -7,15 +7,23 @@ import HardStopScreen from '@/components/wizard/HardStopScreen';
 import { checkEligibility } from '@/lib/ruleEngine';
 import { NIL_RATE_BAND } from '@/lib/constants';
 
-const QUESTIONS = [
+interface Question {
+  key: string;
+  label: string;
+  hint?: string;
+  showIf?: (answers: Record<string, boolean>) => boolean;
+}
+
+const QUESTIONS: Question[] = [
   { key: 'dateOfDeathOnOrAfter2022', label: 'Did the deceased die on or after 1 January 2022?' },
   { key: 'domiciledInScotland', label: 'Was the deceased domiciled in Scotland at the time of death?' },
   { key: 'grossEstateUnderNRB', label: `Is the gross estate value £${NIL_RATE_BAND.toLocaleString()} or less?` },
-  { key: 'noBusinessInterests', label: 'Are there no business interests in the estate?' },
-  { key: 'noAgriculturalLand', label: 'Is there no agricultural land or agricultural relief involved?' },
-  { key: 'noComplexForeignProperty', label: 'Is there no complex foreign property?' },
-  { key: 'noDisputedWill', label: 'Is the will undisputed (or is there no will)?' },
-  { key: 'noOngoingLitigation', label: 'Is there no ongoing litigation involving the estate?' },
+  { key: 'hasBusinessInterests', label: 'Does the estate include any business interests?', hint: 'Examples: sole trader, partnership, limited company shares.' },
+  { key: 'hasAgriculturalLand', label: 'Does the estate include any agricultural land or claim Agricultural Property Relief?' },
+  { key: 'hasForeignProperty', label: 'Does the estate include any property or significant assets located outside the UK?' },
+  { key: 'hasValidWill', label: 'Was a valid will left?' },
+  { key: 'willIsDisputed', label: 'Is anyone disputing the will or challenging its validity?', showIf: (a) => a.hasValidWill === true },
+  { key: 'hasOngoingLitigation', label: 'Is the estate involved in any ongoing legal disputes or court proceedings?' },
 ];
 
 export default function EligibilityPage() {
@@ -25,10 +33,17 @@ export default function EligibilityPage() {
   );
   const [hardStop, setHardStop] = useState<{ message: string } | null>(null);
 
-  const allAnswered = QUESTIONS.every((q) => answers[q.key] !== undefined);
+  const visibleQuestions = QUESTIONS.filter((q) => !q.showIf || q.showIf(answers));
+  const allAnswered = visibleQuestions.every((q) => answers[q.key] !== undefined);
 
   const handleAnswer = (key: string, value: boolean) => {
-    setAnswers((prev) => ({ ...prev, [key]: value }));
+    setAnswers((prev) => {
+      const next = { ...prev, [key]: value };
+      if (key === 'hasValidWill' && !value) {
+        delete next.willIsDisputed;
+      }
+      return next;
+    });
     setHardStop(null);
   };
 
@@ -54,10 +69,11 @@ export default function EligibilityPage() {
       nextDisabled={!allAnswered}
       showPrev={false}
     >
-      {QUESTIONS.map((q) => (
+      {visibleQuestions.map((q) => (
         <div key={q.key} className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200">
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-900">{q.label}</p>
+            {q.hint && <p className="text-xs text-gray-500 mt-1">{q.hint}</p>}
           </div>
           <div className="flex gap-2">
             <button

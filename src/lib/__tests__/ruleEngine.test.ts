@@ -10,49 +10,48 @@ import {
 import type { Asset, Liability } from '../schema';
 
 describe('checkEligibility', () => {
-  it('returns null when all answers are true', () => {
-    const answers = {
-      dateOfDeathOnOrAfter2022: true,
-      domiciledInScotland: true,
-      grossEstateUnderNRB: true,
-      noBusinessInterests: true,
-      noAgriculturalLand: true,
-      noComplexForeignProperty: true,
-      noDisputedWill: true,
-      noOngoingLitigation: true,
-    };
-    expect(checkEligibility(answers)).toBeNull();
+  const eligible = {
+    dateOfDeathOnOrAfter2022: true,
+    domiciledInScotland: true,
+    grossEstateUnderNRB: true,
+    hasBusinessInterests: false,
+    hasAgriculturalLand: false,
+    hasForeignProperty: false,
+    hasValidWill: false,
+    hasOngoingLitigation: false,
+  };
+
+  it('returns null when all answers pass eligibility', () => {
+    expect(checkEligibility(eligible)).toBeNull();
+  });
+
+  it('returns null when will exists but is not disputed', () => {
+    expect(checkEligibility({ ...eligible, hasValidWill: true, willIsDisputed: false })).toBeNull();
   });
 
   it('returns hard stop for non-Scottish domicile', () => {
-    const answers = {
-      dateOfDeathOnOrAfter2022: true,
-      domiciledInScotland: false,
-      grossEstateUnderNRB: true,
-      noBusinessInterests: true,
-      noAgriculturalLand: true,
-      noComplexForeignProperty: true,
-      noDisputedWill: true,
-      noOngoingLitigation: true,
-    };
-    const result = checkEligibility(answers);
+    const result = checkEligibility({ ...eligible, domiciledInScotland: false });
     expect(result).not.toBeNull();
     expect(result!.code).toBe('NON_SCOTTISH_DOMICILE');
   });
 
   it('returns the first failing check', () => {
-    const answers = {
-      dateOfDeathOnOrAfter2022: false,
-      domiciledInScotland: false,
-      grossEstateUnderNRB: true,
-      noBusinessInterests: true,
-      noAgriculturalLand: true,
-      noComplexForeignProperty: true,
-      noDisputedWill: true,
-      noOngoingLitigation: true,
-    };
-    const result = checkEligibility(answers);
+    const result = checkEligibility({ ...eligible, dateOfDeathOnOrAfter2022: false, domiciledInScotland: false });
     expect(result!.code).toBe('DEATH_BEFORE_2022');
+  });
+
+  it('returns hard stop for business interests', () => {
+    const result = checkEligibility({ ...eligible, hasBusinessInterests: true });
+    expect(result!.code).toBe('BUSINESS_INTERESTS');
+  });
+
+  it('returns hard stop for disputed will', () => {
+    const result = checkEligibility({ ...eligible, hasValidWill: true, willIsDisputed: true });
+    expect(result!.code).toBe('DISPUTED_WILL');
+  });
+
+  it('does not hard stop on disputed will when no will exists', () => {
+    expect(checkEligibility({ ...eligible, hasValidWill: false, willIsDisputed: true })).toBeNull();
   });
 });
 

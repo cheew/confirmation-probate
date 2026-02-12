@@ -19,6 +19,11 @@ function getDeclarant(executors: Executor[]): Executor {
   return d;
 }
 
+/** Strip trailing periods, commas and spaces from a string. */
+function stripTrailingPunctuation(s: string): string {
+  return s.replace(/[.,\s]+$/, '');
+}
+
 function formatAddress(addr: {
   line1: string;
   line2: string;
@@ -27,6 +32,8 @@ function formatAddress(addr: {
   postcode: string;
 }): string {
   return [addr.line1, addr.line2, addr.line3, addr.line4, addr.postcode]
+    .filter(Boolean)
+    .map(stripTrailingPunctuation)
     .filter(Boolean)
     .join(', ');
 }
@@ -63,12 +70,12 @@ function buildParagraph2(c: Case): string {
     const declinedExecutors = c.executors.filter((e) => e.status === 'declined');
     const deceasedExecutors = c.executors.filter((e) => e.status === 'deceased');
 
-    let text = `${declarant.fullName}, ${declarant.relationship} and ${genderTitle(declarant.gender)} Nominate of the late ${deceasedName}`;
+    let text = `${stripTrailingPunctuation(declarant.fullName)}, ${declarant.relationship} and ${genderTitle(declarant.gender)} Nominate of the late ${deceasedName}`;
 
     // Co-executors
     if (activeCoExecutors.length > 0) {
       const coNames = activeCoExecutors
-        .map((e) => `${e.fullName}, residing at ${formatAddress(e.address)}`)
+        .map((e) => `${stripTrailingPunctuation(e.fullName)}, residing at ${formatAddress(e.address)}`)
         .join(', and ');
       text += ` along with ${coNames}`;
     }
@@ -104,7 +111,7 @@ function buildParagraph2(c: Case): string {
     return text;
   } else {
     // === Executor Dative path ===
-    return `${declarant.fullName}, ${declarant.relationship} and ${genderTitle(declarant.gender)} Dative of the late ${deceasedName} qua ${declarant.relationship} of the said deceased who died intestate as decerned by the Sheriff at ${c.will.sheriffdomOfDecree} on ${formatDateForDeclaration(c.will.dateOfDecree)}`;
+    return `${stripTrailingPunctuation(declarant.fullName)}, ${declarant.relationship} and ${genderTitle(declarant.gender)} Dative of the late ${deceasedName} qua ${declarant.relationship} of the said deceased who died intestate as decerned by the Sheriff at ${c.will.sheriffdomOfDecree} on ${formatDateForDeclaration(c.will.dateOfDecree)}`;
   }
 }
 
@@ -113,7 +120,9 @@ function buildCoExecutorNames(c: Case): string {
     (e) => !e.isDeclarant && e.status === 'active'
   );
   if (coExecutors.length === 0) return '';
-  return coExecutors.map((e) => e.fullName).join(' and ');
+  return coExecutors
+    .map((e) => `${stripTrailingPunctuation(e.fullName)} (${e.relationship})`)
+    .join(' and ');
 }
 
 export function buildDeclaration(c: Case, confirmationTotalPounds: number): DeclarationOutput {
@@ -123,7 +132,7 @@ export function buildDeclaration(c: Case, confirmationTotalPounds: number): Decl
   return {
     C1_17: `${declarant.fullName}\n${formatAddress(declarant.address)}`,
     C1_18: `${c.deceased.firstNames} ${c.deceased.surname}`,
-    C1_19: `the Sheriffdom of ${c.sheriffdom} in Scotland`,
+    C1_19: `The Sheriffdom of ${c.sheriffdom} in Scotland`,
     C1_20: buildParagraph2(c),
     C1_21a: activeExecutorCount === 1 ? EXECUTOR_VERB.single : EXECUTOR_VERB.multiple,
     C1_21b: declarant.gender === 'female' ? EXECUTOR_GENDER.female : EXECUTOR_GENDER.male,

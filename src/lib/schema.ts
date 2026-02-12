@@ -10,11 +10,12 @@ export const eligibilitySchema = z.object({
   dateOfDeathOnOrAfter2022: z.literal(true),
   domiciledInScotland: z.literal(true),
   grossEstateUnderNRB: z.literal(true),
-  noBusinessInterests: z.literal(true),
-  noAgriculturalLand: z.literal(true),
-  noComplexForeignProperty: z.literal(true),
-  noDisputedWill: z.literal(true),
-  noOngoingLitigation: z.literal(true),
+  hasBusinessInterests: z.literal(false),
+  hasAgriculturalLand: z.literal(false),
+  hasForeignProperty: z.literal(false),
+  hasValidWill: z.boolean(),
+  willIsDisputed: z.boolean().optional(),
+  hasOngoingLitigation: z.literal(false),
 });
 export type Eligibility = z.infer<typeof eligibilitySchema>;
 
@@ -117,5 +118,7 @@ export const caseSchema = z.object({
   liabilities: z.array(liabilitySchema),
   declarationDate: isoDateString,
   currentStep: z.string().default('eligibility'),
+  yourReference: z.string().max(20).default(''),
+  hmrcReference: z.string().max(20).default(''),
 });
 export type Case = z.infer<typeof caseSchema>;

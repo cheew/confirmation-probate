@@ -8,6 +8,8 @@ export default function TaxPage() {
   const { data, updateData, goNext, goPrev } = useWizard();
   const [utr, setUtr] = useState<string>(data.deceased?.utr || '');
   const [niNumber, setNiNumber] = useState<string>(data.deceased?.niNumber || '');
+  const [yourReference, setYourReference] = useState<string>(data.yourReference || '');
+  const [hmrcReference, setHmrcReference] = useState<string>(data.hmrcReference || '');
 
   const grossTotal = (data.assets || [])
     .filter((a: { country: string }) => a.country !== 'elsewhere')
@@ -26,6 +28,8 @@ export default function TaxPage() {
         utr,
         niNumber,
       },
+      yourReference,
+      hmrcReference,
     });
     goNext();
   };
@@ -37,6 +41,36 @@ export default function TaxPage() {
       onNext={handleNext}
       onPrev={goPrev}
     >
+      <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-3">
+        <h3 className="font-semibold text-gray-900">References</h3>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Your reference (optional)
+          </label>
+          <input
+            type="text"
+            value={yourReference}
+            onChange={(e) => setYourReference(e.target.value)}
+            placeholder="Your own reference number, if any"
+            className="w-64 p-2 border border-gray-300 rounded-md text-sm"
+            maxLength={20}
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            HM Revenue and Customs reference (optional)
+          </label>
+          <input
+            type="text"
+            value={hmrcReference}
+            onChange={(e) => setHmrcReference(e.target.value)}
+            placeholder="From IHT400 correspondence, if any"
+            className="w-64 p-2 border border-gray-300 rounded-md text-sm"
+            maxLength={20}
+          />
+        </div>
+      </div>
+
       <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-3">
         <h3 className="font-semibold text-gray-900">IHT Status</h3>
         <div className="text-sm text-gray-700 space-y-1">

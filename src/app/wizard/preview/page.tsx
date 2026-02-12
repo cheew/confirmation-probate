@@ -98,6 +98,8 @@ function assembleCase(data: Record<string, unknown>): Case | null {
       liabilities,
       declarationDate: today,
       currentStep: 'preview',
+      yourReference: (data.yourReference as string) || '',
+      hmrcReference: (data.hmrcReference as string) || '',
     };
   } catch {
     return null;

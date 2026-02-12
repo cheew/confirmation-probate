@@ -10,7 +10,7 @@ import {
 } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { WIZARD_STEPS } from '@/lib/constants';
-import { saveWizardData, loadWizardData, clearWizardData } from '@/lib/storage';
+import { saveWizardData, loadWizardData, clearWizardData, exportWizardDataToFile, parseWizardDataFile } from '@/lib/storage';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type WizardData = Record<string, any>;
@@ -23,6 +23,8 @@ interface WizardContextType {
   goPrev: () => void;
   goToStep: (slug: string) => void;
   resetWizard: () => void;
+  exportSession: () => void;
+  importSession: (file: File) => Promise<boolean>;
 }
 
 const WizardContext = createContext<WizardContextType | null>(null);
@@ -87,13 +89,27 @@ export function WizardProvider({ children }: { children: ReactNode }) {
     router.push('/wizard/eligibility');
   }, [router]);
 
+  const exportSession = useCallback(() => {
+    exportWizardDataToFile(data);
+  }, [data]);
+
+  const importSession = useCallback(async (file: File): Promise<boolean> => {
+    const parsed = await parseWizardDataFile(file);
+    if (!parsed) return false;
+    setData(parsed);
+    saveWizardData(parsed);
+    const step = (parsed.currentStep as string) || 'eligibility';
+    router.push(`/wizard/${step}`);
+    return true;
+  }, [router]);
+
   if (!loaded) {
     return <div className="text-center py-12">Loading...</div>;
   }
 
   return (
     <WizardContext.Provider
-      value={{ data, updateData, currentStep, goNext, goPrev, goToStep, resetWizard }}
+      value={{ data, updateData, currentStep, goNext, goPrev, goToStep, resetWizard, exportSession, importSession }}
     >
       {children}
     </WizardContext.Provider>

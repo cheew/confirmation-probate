@@ -8,20 +8,34 @@ export interface HardStop {
 }
 
 export function checkEligibility(answers: Record<string, boolean>): HardStop | null {
-  const checks: [string, string, string][] = [
+  // Questions where "Yes" (true) means eligible
+  const mustBeTrue: [string, string, string][] = [
     ['dateOfDeathOnOrAfter2022', 'DEATH_BEFORE_2022', 'This form is only for deaths on or after 1 January 2022.'],
     ['domiciledInScotland', 'NON_SCOTTISH_DOMICILE', 'The deceased must have been domiciled in Scotland.'],
     ['grossEstateUnderNRB', 'ESTATE_OVER_THRESHOLD', `Estates over £${NIL_RATE_BAND.toLocaleString()} require professional assistance.`],
-    ['noBusinessInterests', 'BUSINESS_INTERESTS', 'Estates with business interests require a solicitor.'],
-    ['noAgriculturalLand', 'AGRICULTURAL_LAND', 'Agricultural land or agricultural relief cases require a solicitor.'],
-    ['noComplexForeignProperty', 'COMPLEX_FOREIGN', 'Complex foreign property requires a solicitor.'],
-    ['noDisputedWill', 'DISPUTED_WILL', 'Disputed wills require a solicitor.'],
-    ['noOngoingLitigation', 'ONGOING_LITIGATION', 'Ongoing litigation involving the estate requires a solicitor.'],
   ];
 
-  for (const [key, code, message] of checks) {
+  for (const [key, code, message] of mustBeTrue) {
     if (!answers[key]) return { code, message };
   }
+
+  // Questions where "No" (false) means eligible
+  const mustBeFalse: [string, string, string][] = [
+    ['hasBusinessInterests', 'BUSINESS_INTERESTS', 'Estates with business interests require a solicitor.'],
+    ['hasAgriculturalLand', 'AGRICULTURAL_LAND', 'Agricultural land or agricultural relief cases require a solicitor.'],
+    ['hasForeignProperty', 'COMPLEX_FOREIGN', 'Complex foreign property requires a solicitor.'],
+    ['hasOngoingLitigation', 'ONGOING_LITIGATION', 'Ongoing litigation involving the estate requires a solicitor.'],
+  ];
+
+  for (const [key, code, message] of mustBeFalse) {
+    if (answers[key]) return { code, message };
+  }
+
+  // Disputed will: only relevant if a valid will exists
+  if (answers.hasValidWill && answers.willIsDisputed) {
+    return { code: 'DISPUTED_WILL', message: 'Disputed wills require a solicitor.' };
+  }
+
   return null;
 }
 

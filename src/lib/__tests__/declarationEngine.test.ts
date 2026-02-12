@@ -160,6 +160,16 @@ describe('buildDeclaration', () => {
     expect(decl.C1_20).toContain('Mary Brown');
   });
 
+  it('strips trailing punctuation from names and addresses', () => {
+    const c = makeMultipleExecutorCase();
+    c.executors[1].fullName = 'Mary Brown.';
+    c.executors[1].address.line1 = 'Queen Street.';
+    const decl = buildDeclaration(c, 150000);
+    expect(decl.C1_20).not.toContain('Brown.,');
+    expect(decl.C1_20).not.toContain('Street.,');
+    expect(decl.C1_20).toContain('Mary Brown, residing at Queen Street');
+  });
+
   it('uses "/ am" for single executor', () => {
     const c = makeSingleNominateCase();
     const decl = buildDeclaration(c, 150000);
@@ -188,8 +198,8 @@ describe('buildDeclaration', () => {
   it('names the Sheriffdom in domicile (never just "Scotland")', () => {
     const c = makeSingleNominateCase();
     const decl = buildDeclaration(c, 150000);
-    expect(decl.C1_19).toBe('the Sheriffdom of Lothian and Borders in Scotland');
-    expect(decl.C1_19).toMatch(/^the Sheriffdom of .+ in Scotland$/);
+    expect(decl.C1_19).toBe('The Sheriffdom of Lothian and Borders in Scotland');
+    expect(decl.C1_19).toMatch(/^The Sheriffdom of .+ in Scotland$/);
   });
 
   it('includes codicils when present', () => {
