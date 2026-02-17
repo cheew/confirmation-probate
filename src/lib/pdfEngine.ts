@@ -331,8 +331,7 @@ export async function generatePdf(caseData: Case): Promise<Uint8Array> {
   // Box 26: Tax — always 0 for excepted estates
   setText(getFieldId(fieldMap, 'total_tax_interest_payable'), '0');
 
-  // Flatten to prevent editing
-  form.flatten();
+  // form.flatten(); // Disabled: keep fields editable for manual review
 
   return pdfDoc.save();
 }
