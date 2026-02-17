@@ -10,8 +10,19 @@ export default function ProgressBar({ currentStep }: ProgressBarProps) {
   const currentIndex = WIZARD_STEPS.findIndex((s) => s.slug === currentStep);
 
   return (
-    <div className="w-full mb-8">
-      <div className="flex items-center justify-between">
+    <div className="w-full mb-4">
+      {/* Mobile: compact current-step indicator */}
+      <div className="sm:hidden text-center text-sm text-gray-600">
+        Step {currentIndex + 1} of {WIZARD_STEPS.length}
+        {currentIndex >= 0 && (
+          <span className="font-semibold text-blue-600 ml-1">
+            — {WIZARD_STEPS[currentIndex]?.label}
+          </span>
+        )}
+      </div>
+
+      {/* Desktop: full step bar */}
+      <div className="hidden sm:flex items-center justify-between">
         {WIZARD_STEPS.map((step, idx) => {
           const isCompleted = idx < currentIndex;
           const isCurrent = idx === currentIndex;
@@ -31,7 +42,7 @@ export default function ProgressBar({ currentStep }: ProgressBarProps) {
                   {isCompleted ? '\u2713' : idx + 1}
                 </div>
                 <span
-                  className={`text-xs mt-1 hidden sm:block ${
+                  className={`text-xs mt-1 ${
                     isCurrent ? 'font-semibold text-blue-600' : 'text-gray-500'
                   }`}
                 >

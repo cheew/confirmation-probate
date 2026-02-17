@@ -24,24 +24,24 @@ function WizardContent({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-200 px-4 py-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-lg font-semibold text-gray-900">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+            <h1 className="text-base sm:text-lg font-semibold text-gray-900">
               Scottish Confirmation — C1(2022) Wizard
             </h1>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-shrink-0">
               <button
                 type="button"
                 onClick={exportSession}
                 className="px-3 py-1.5 text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md border border-gray-300"
               >
-                Export Session
+                Export
               </button>
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 className="px-3 py-1.5 text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md border border-gray-300"
               >
-                Import Session
+                Import
               </button>
               <input
                 ref={fileInputRef}
