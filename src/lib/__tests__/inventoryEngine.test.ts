@@ -63,8 +63,15 @@ describe('buildInventory', () => {
   it('inserts blank separator lines between sections', () => {
     const result = buildInventory([]);
     const blankLines = result.lines.filter((l) => l.isBlank);
-    // 6 sections, so 5 blank separators (none before the first)
-    expect(blankLines.length).toBe(5);
+    // 1 blank after the opening "Estate in Scotland" label + 5 between the 6 sections
+    expect(blankLines.length).toBe(6);
+  });
+
+  it('starts with "Estate in Scotland" as the first line', () => {
+    const result = buildInventory([]);
+    expect(result.lines[0].description).toBe('Estate in Scotland');
+    expect(result.lines[0].itemNumber).toBe('');
+    expect(result.lines[1].isBlank).toBe(true);
   });
 
   it('never places subtotals or summary values in the amount or price column', () => {

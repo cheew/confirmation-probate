@@ -108,6 +108,19 @@ export function buildInventory(assets: Asset[]): InventoryResult {
   let runningItemNumber = 1;
   let isFirstSection = true;
 
+  // Opening label required by court convention — appears as the very first inventory line
+  allLines.push({
+    itemNumber: '',
+    description: 'Estate in Scotland',
+    price: '',
+    amount: '',
+    isHeading: false,
+    isSubtotal: false,
+    isSummaryLine: false,
+    isBlank: false,
+  });
+  allLines.push(blankLine());
+
   for (const section of SECTION_HEADINGS) {
     // Blank separator line before each section (except the first)
     if (!isFirstSection) {
