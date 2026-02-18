@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildInventory } from '../inventoryEngine';
+import { buildInventory, wrapDescription } from '../inventoryEngine';
 import type { Asset } from '../schema';
 
 function makeAsset(overrides: Partial<Asset> = {}): Asset {
@@ -7,7 +7,7 @@ function makeAsset(overrides: Partial<Asset> = {}): Asset {
     id: '1',
     type: 'bank_account',
     country: 'scotland',
-    description: 'Bank of Scotland Current Account 12345678',
+    description: 'Bank of Scotland Current Account',
     fullValue: 5000,
     deceasedShareValue: 5000,
     jointOwnership: false,
@@ -15,6 +15,28 @@ function makeAsset(overrides: Partial<Asset> = {}): Asset {
     ...overrides,
   };
 }
+
+describe('wrapDescription', () => {
+  it('returns single line if within limit', () => {
+    expect(wrapDescription('Short desc', 45)).toEqual(['Short desc']);
+  });
+
+  it('wraps long text at word boundaries', () => {
+    const long = 'Virgin Money, Castle Douglas Current Account Sort Code: 82-67-09 Account No: 12345678';
+    const lines = wrapDescription(long, 45);
+    for (const line of lines) {
+      expect(line.length).toBeLessThanOrEqual(45);
+    }
+    expect(lines.join(' ')).toBe(long);
+  });
+
+  it('handles single very long word', () => {
+    const word = 'A'.repeat(60);
+    const lines = wrapDescription(word, 45);
+    // Single word can't be split, so it stays as one line
+    expect(lines).toEqual([word]);
+  });
+});
 
 describe('buildInventory', () => {
   it('always includes all 6 mandatory headings even with zero assets', () => {
@@ -38,6 +60,13 @@ describe('buildInventory', () => {
     expect(nilLines.length).toBe(5);
   });
 
+  it('inserts blank separator lines between sections', () => {
+    const result = buildInventory([]);
+    const blankLines = result.lines.filter((l) => l.isBlank);
+    // 6 sections, so 5 blank separators (none before the first)
+    expect(blankLines.length).toBe(5);
+  });
+
   it('never places subtotals or summary values in the amount column', () => {
     const result = buildInventory([
       makeAsset({ id: '1', country: 'scotland', deceasedShareValue: 5000 }),
@@ -57,7 +86,7 @@ describe('buildInventory', () => {
     ];
     const result = buildInventory(assets);
     const assetLines = result.lines.filter(
-      (l) => !l.isHeading && !l.isSubtotal && !l.isSummaryLine && l.description !== 'NIL'
+      (l) => !l.isHeading && !l.isSubtotal && !l.isSummaryLine && !l.isBlank && l.description !== 'NIL' && l.itemNumber !== ''
     );
     // Property should appear before bank (heritable section comes first)
     expect(assetLines[0].description).toBe('Property');
@@ -131,5 +160,25 @@ describe('buildInventory', () => {
     ]);
     const assetLine = result.lines.find((l) => l.description === 'Sole account');
     expect(assetLine!.price).toBe('');
+  });
+
+  it('wraps long descriptions across multiple inventory lines', () => {
+    const longDesc = 'Virgin Money, Castle Douglas Current Account Sort Code: 82-67-09 Account No: 12345678';
+    const result = buildInventory([
+      makeAsset({ id: '1', description: longDesc }),
+    ]);
+    // First line should have the item number and value
+    const firstLine = result.lines.find((l) => l.itemNumber === '1');
+    expect(firstLine).toBeDefined();
+    expect(firstLine!.description.length).toBeLessThanOrEqual(45);
+    expect(firstLine!.amount).toBe('5000');
+
+    // Should have a continuation line with no item number and no values
+    const continuationLines = result.lines.filter(
+      (l) => !l.isHeading && !l.isBlank && l.description !== 'NIL' && l.itemNumber === '' && !l.isSummaryLine && l.description !== ''
+    );
+    expect(continuationLines.length).toBeGreaterThan(0);
+    expect(continuationLines[0].amount).toBe('');
+    expect(continuationLines[0].price).toBe('');
   });
 });

@@ -1,16 +1,20 @@
 import { INVENTORY_MAX_LINES } from './constants';
 import type { Asset } from './schema';
 
+// Maximum characters per description line before wrapping to next row
+export const DESC_LINE_MAX_CHARS = 45;
+
 // === Output type: one row in the 37-line inventory table ===
 export interface InventoryLine {
   lineNumber: number;       // 1-37
-  itemNumber: string;       // "" for headings/subtotals, "1","2",etc. for assets
-  description: string;      // Up to 60 chars
+  itemNumber: string;       // "" for headings/subtotals/continuations, "1","2",etc. for first line of asset
+  description: string;      // Up to DESC_LINE_MAX_CHARS chars
   price: string;            // "" or a number string (full value or subtotal)
   amount: string;           // "" or a number string (deceased's share — goes into auto-sum column)
   isHeading: boolean;
   isSubtotal: boolean;
   isSummaryLine: boolean;
+  isBlank: boolean;         // Separator line between sections
 }
 
 // === Section definitions (mandatory order per instructions doc section 5.1) ===
@@ -29,6 +33,44 @@ function classifyAsset(asset: Asset): string {
     return asset.type === 'heritable_property' ? 'heritable_scotland' : 'moveable_scotland';
   }
   return asset.country; // 'england_wales' | 'northern_ireland' | 'elsewhere'
+}
+
+/** Word-wrap a description string into chunks of at most maxChars characters. */
+export function wrapDescription(text: string, maxChars: number = DESC_LINE_MAX_CHARS): string[] {
+  if (text.length <= maxChars) return [text];
+
+  const words = text.split(/\s+/);
+  const lines: string[] = [];
+  let current = '';
+
+  for (const word of words) {
+    if (current.length === 0) {
+      current = word;
+    } else if (current.length + 1 + word.length <= maxChars) {
+      current += ' ' + word;
+    } else {
+      lines.push(current);
+      current = word;
+    }
+  }
+  if (current.length > 0) {
+    lines.push(current);
+  }
+
+  return lines;
+}
+
+function blankLine(): Omit<InventoryLine, 'lineNumber'> {
+  return {
+    itemNumber: '',
+    description: '',
+    price: '',
+    amount: '',
+    isHeading: false,
+    isSubtotal: false,
+    isSummaryLine: false,
+    isBlank: true,
+  };
 }
 
 export interface InventoryResult {
@@ -59,14 +101,20 @@ export function buildInventory(assets: Asset[]): InventoryResult {
     groups.moveable_scotland.reduce((s, a) => s + a.deceasedShareValue, 0);
   const englandTotal = groups.england_wales.reduce((s, a) => s + a.deceasedShareValue, 0);
   const niTotal = groups.northern_ireland.reduce((s, a) => s + a.deceasedShareValue, 0);
-  const elsewhereTotal = groups.elsewhere.reduce((s, a) => s + a.deceasedShareValue, 0);
   const confirmationTotal = scotlandTotal + englandTotal + niTotal; // Excludes 'elsewhere'
 
   // Step 3: Build all lines (may exceed 37)
   const allLines: Omit<InventoryLine, 'lineNumber'>[] = [];
   let runningItemNumber = 1;
+  let isFirstSection = true;
 
   for (const section of SECTION_HEADINGS) {
+    // Blank separator line before each section (except the first)
+    if (!isFirstSection) {
+      allLines.push(blankLine());
+    }
+    isFirstSection = false;
+
     // Emit section heading
     allLines.push({
       itemNumber: '',
@@ -76,6 +124,7 @@ export function buildInventory(assets: Asset[]): InventoryResult {
       isHeading: true,
       isSubtotal: false,
       isSummaryLine: false,
+      isBlank: false,
     });
 
     // SUMMARY FOR CONFIRMATION is special
@@ -89,6 +138,7 @@ export function buildInventory(assets: Asset[]): InventoryResult {
         isHeading: false,
         isSubtotal: false,
         isSummaryLine: true,
+        isBlank: false,
       });
       allLines.push({
         itemNumber: '',
@@ -98,6 +148,7 @@ export function buildInventory(assets: Asset[]): InventoryResult {
         isHeading: false,
         isSubtotal: false,
         isSummaryLine: true,
+        isBlank: false,
       });
       allLines.push({
         itemNumber: '',
@@ -107,6 +158,7 @@ export function buildInventory(assets: Asset[]): InventoryResult {
         isHeading: false,
         isSubtotal: false,
         isSummaryLine: true,
+        isBlank: false,
       });
       allLines.push({
         itemNumber: '',
@@ -116,6 +168,7 @@ export function buildInventory(assets: Asset[]): InventoryResult {
         isHeading: false,
         isSubtotal: true,
         isSummaryLine: true,
+        isBlank: false,
       });
       continue;
     }
@@ -133,22 +186,40 @@ export function buildInventory(assets: Asset[]): InventoryResult {
         isHeading: false,
         isSubtotal: false,
         isSummaryLine: false,
+        isBlank: false,
       });
     } else {
       for (const asset of sectionAssets) {
         const showPrice = asset.jointOwnership;
-        // 'elsewhere' assets: value listed but NOT in the amount (auto-sum) column
         const isElsewhere = section.key === 'elsewhere';
+        const descLines = wrapDescription(asset.description);
 
+        // First line: has item number, price, amount
         allLines.push({
           itemNumber: String(runningItemNumber),
-          description: asset.description,
+          description: descLines[0],
           price: showPrice ? String(asset.fullValue) : '',
           amount: isElsewhere ? '' : String(asset.deceasedShareValue),
           isHeading: false,
           isSubtotal: false,
           isSummaryLine: false,
+          isBlank: false,
         });
+
+        // Continuation lines: description only
+        for (let i = 1; i < descLines.length; i++) {
+          allLines.push({
+            itemNumber: '',
+            description: descLines[i],
+            price: '',
+            amount: '',
+            isHeading: false,
+            isSubtotal: false,
+            isSummaryLine: false,
+            isBlank: false,
+          });
+        }
+
         runningItemNumber++;
       }
     }

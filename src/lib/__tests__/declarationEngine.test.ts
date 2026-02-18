@@ -55,6 +55,8 @@ function makeSingleNominateCase(): Case {
     liabilities: [],
     declarationDate: '2024-01-10',
     currentStep: 'preview',
+    yourReference: '',
+    hmrcReference: '',
   };
 }
 
@@ -83,6 +85,8 @@ function makeDativeCase(): Case {
     liabilities: [],
     declarationDate: '2024-01-10',
     currentStep: 'preview',
+    yourReference: '',
+    hmrcReference: '',
   };
 }
 
@@ -120,6 +124,8 @@ function makeMultipleExecutorCase(): Case {
     liabilities: [],
     declarationDate: '2024-01-10',
     currentStep: 'preview',
+    yourReference: '',
+    hmrcReference: '',
   };
 }
 
