@@ -127,13 +127,17 @@ export function buildInventory(assets: Asset[]): InventoryResult {
       isBlank: false,
     });
 
-    // SUMMARY FOR CONFIRMATION is special
+    // SUMMARY FOR CONFIRMATION is special.
+    // Per instructions: summary values must NOT go in the £ amount column (auto-sum would
+    // double-count them with individual asset values). They also must NOT go in the Price
+    // column (confusing, Price is for shares). Instead, embed the value in the Description
+    // field — the only column that won't affect the auto-sum.
     if (section.key === 'summary') {
-      // Summary subtotals go in PRICE column, NOT amount column (prevents auto-sum double-counting)
+      const fmt = (n: number) => (n > 0 ? String(n) : 'NIL');
       allLines.push({
         itemNumber: '',
-        description: 'Estate in Scotland',
-        price: scotlandTotal > 0 ? String(scotlandTotal) : 'NIL',
+        description: `Estate in Scotland  ${fmt(scotlandTotal)}`,
+        price: '',
         amount: '',
         isHeading: false,
         isSubtotal: false,
@@ -142,8 +146,8 @@ export function buildInventory(assets: Asset[]): InventoryResult {
       });
       allLines.push({
         itemNumber: '',
-        description: 'Estate in England and Wales',
-        price: englandTotal > 0 ? String(englandTotal) : 'NIL',
+        description: `Estate in England and Wales  ${fmt(englandTotal)}`,
+        price: '',
         amount: '',
         isHeading: false,
         isSubtotal: false,
@@ -152,8 +156,8 @@ export function buildInventory(assets: Asset[]): InventoryResult {
       });
       allLines.push({
         itemNumber: '',
-        description: 'Estate in Northern Ireland',
-        price: niTotal > 0 ? String(niTotal) : 'NIL',
+        description: `Estate in Northern Ireland  ${fmt(niTotal)}`,
+        price: '',
         amount: '',
         isHeading: false,
         isSubtotal: false,
@@ -162,8 +166,8 @@ export function buildInventory(assets: Asset[]): InventoryResult {
       });
       allLines.push({
         itemNumber: '',
-        description: 'TOTAL FOR CONFIRMATION',
-        price: String(confirmationTotal),
+        description: `TOTAL FOR CONFIRMATION  ${confirmationTotal}`,
+        price: '',
         amount: '',
         isHeading: false,
         isSubtotal: true,

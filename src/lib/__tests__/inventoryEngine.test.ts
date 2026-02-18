@@ -67,7 +67,7 @@ describe('buildInventory', () => {
     expect(blankLines.length).toBe(5);
   });
 
-  it('never places subtotals or summary values in the amount column', () => {
+  it('never places subtotals or summary values in the amount or price column', () => {
     const result = buildInventory([
       makeAsset({ id: '1', country: 'scotland', deceasedShareValue: 5000 }),
     ]);
@@ -76,7 +76,21 @@ describe('buildInventory', () => {
     );
     for (const line of summaryAndSubtotalLines) {
       expect(line.amount).toBe('');
+      expect(line.price).toBe('');
     }
+  });
+
+  it('embeds summary values in the description field', () => {
+    const result = buildInventory([
+      makeAsset({ id: '1', country: 'scotland', deceasedShareValue: 5000 }),
+    ]);
+    const scotlandLine = result.lines.find(
+      (l) => l.isSummaryLine && l.description.startsWith('Estate in Scotland')
+    );
+    expect(scotlandLine).toBeDefined();
+    expect(scotlandLine!.description).toContain('5000');
+    expect(scotlandLine!.price).toBe('');
+    expect(scotlandLine!.amount).toBe('');
   });
 
   it('puts heritable before moveable in Scotland', () => {
